@@ -18,7 +18,7 @@ export const MyDiv: RA.FC<MyDivProps, true, HTMLDivElement> = ({ children, itera
             {iterate && <button onClick={() => appDispatch({ type: 'add', payload: 1 })}>Iterate Data</button>}
 
             {/** Will show a console error, but wont rerender */}
-            <button onClick={() => appDispatch({ type: 'Uhh Ohh' as any })}>Make a Mistake (check console)</button>
+            <button onClick={() => appDispatch({ type: 'Uhh Ohh' as any })}>Make a Mistake (check console, this wont rerender)</button>
         </div>
     );
 };
