@@ -13,8 +13,10 @@ declare namespace RA {
               payload: P;
           });
 
-    type ContextSetActions<T extends {}> = ActionsByKey<KeysToActions<T>>;
+    type ContextSetActions<T extends {}> = ActionsByKey<KeysToActions<Complete<T>>>;
 }
-
+type Complete<T> = {
+	[P in keyof Required<T>]: Pick<T, P> extends Required<Pick<T, P>> ? T[P] : T[P] | undefined;
+};
 type KeysToActions<T> = { [K in keyof T]: RA.Action<K, T[K]> };
 type ActionsByKey<T extends {}> = T[keyof T];

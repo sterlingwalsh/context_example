@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 
 interface AppState {
-    prop1: number | undefined;
-    prop2: string | undefined;
+    prop1?: number;
+    prop2?: string ;
     data: number[];
 }
 
