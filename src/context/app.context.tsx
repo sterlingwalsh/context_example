@@ -31,6 +31,7 @@ export const useAppContext = () => {
 const reducer = (state: AppState, action: AppAction) => {
     const newState = action.storeOnly ? state : { ...state };
 
+  // You can't refactor fuzzy strings. You'd have to create constants for each action type
     switch (action.type) {
         case 'prop1':
         case 'prop2':
